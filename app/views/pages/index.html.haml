@@ -1,2 +1,7 @@
 %h1 Pages#index
-%p Find me in app/views/pages/index.html.haml
+
+- if user_signed_in?
+  = link_to "友達一覧", "#"
+  = link_to "トーク一覧", "#"
+- else
+  %p LINEの機能を使うにはログイン又は登録をおこなってください
