@@ -1,7 +1,8 @@
 %h1 Pages#index
 
 - if user_signed_in?
-  = link_to "友達一覧", "#"
-  = link_to "トーク一覧", "#"
+  - @users.each do |user|
+    = "#{user.name}"
+    %br
 - else
   %p LINEの機能を使うにはログイン又は登録をおこなってください

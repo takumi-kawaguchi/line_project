@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: "pages#index"
   get 'pages/index'
   get 'pages/show'
-
+  resources :messages, only: [:index, :show, :create, :destroy]
+  devise_for :users
   devise_scope :user do
     delete '/users/sign_out' => 'devise/sessions#destroy'
   end
